@@ -1,46 +1,4 @@
 /**
-  This is a sample Node.js script
-  explaining how to interact with
-  stdin and stdout using the
-  colors library.
-*/
-
-const dns = require('dns')
-const readline = require('readline')
-const strings = require('./strings')
-const colors = require('colors/safe')
-
-colors.enable()
-
-const print = (msg) => {
-  console.log(msg)
-}
-
-const resolveAddress = (host) => {
-  dns.lookup(
-  host, (err, addr, type) => {
-    print('')
-    if (err) {
-      print(strings.error)
-      print(colors.red(err.code)) 
-    }
-    
-    if (addr) { 
-      print(strings.result)
-      print(colors.green.underline(addr)) 
-    }
-    
-    print('——\n')
-    process.stdout.write(strings.prompt)
-  })
-}
-
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false
-})
-
 rl.on('line', (line) => {
   var host = line.replace(/\0/g, '')
   resolveAddress(host)
@@ -50,3 +8,47 @@ print(strings.help)
 print('')
 process.stdout.write(strings.prompt)
 n
+import React, {Component} from 'react';
+import {AppRegistry, StyleSheet, Text, View} from 'react-native';
+
+type Props = {};
+export default class MyApp extends Component<Props> {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.js
+        </Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#2A2734',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    color: 'white'
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#B0B0B0',
+    marginBottom: 5,
+  },
+});
+
+// You must register the main component
+// with the same name as the project
+AppRegistry.registerComponent(
+  'my-rn-app', () => MyApp
+);
