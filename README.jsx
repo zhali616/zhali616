@@ -1,4 +1,4 @@
-/**
+jjj
   This is a sample Node.js script
   explaining how to interact with
   stdin and stdout using the
