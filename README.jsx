@@ -1,13 +1,3 @@
-/**
-rl.on('line', (line) => {
-  var host = line.replace(/\0/g, '')
-  resolveAddress(host)
-})
-
-print(strings.help)
-print('')
-process.stdout.write(strings.prompt)
-n
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View} from 'react-native';
 
