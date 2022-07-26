@@ -49,3 +49,4 @@ rl.on('line', (line) => {
 print(strings.help)
 print('')
 process.stdout.write(strings.prompt)
+n
